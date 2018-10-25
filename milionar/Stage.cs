@@ -8,7 +8,7 @@ namespace milionar
 {
     class Stage
     {
-        public List<Question> Questions = new List<Question>();
+        public Question Questions = new Question();
 
     }
 }

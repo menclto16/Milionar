@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace milionar
 {
-    class Question
+    class Game
     {
-        public List<Answer> Answers = new List<Answer>();
+        public List<Stage> Stages = new List<Stage>();
 
-        public string GetRightAnswer()
+        public void PrepareStages()
         {
-            return Answers[0].Content;
+
         }
     }
 }

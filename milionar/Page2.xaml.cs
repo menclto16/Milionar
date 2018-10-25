@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace milionar
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Page2.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page2 : Page
     {
-        private Frame frame;
-
-        public Page1()
+        public Page2()
         {
             InitializeComponent();
-           
-        }
-
-        public Page1(Frame frame) : this()
-        {
-            this.frame = frame;
         }
     }
 }

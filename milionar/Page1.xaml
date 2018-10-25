@@ -15,10 +15,40 @@
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{DynamicResource MaterialDesignFont}"
     Title="Page1">
-
-    <Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">l Design App</TextBlock>
-        </materialDesign:Card>
-    </Grid>
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="SteelBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Fill="{TemplateBinding Background}" Data="M0 16 L16 32 L300 32 L316 16 L300 0 L16 0 Z" />
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Border BorderThickness="30" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Left">
+                <Button></Button>
+                <Button></Button>
+            </StackPanel>
+            <StackPanel Grid.Column="2" HorizontalAlignment="Right">
+                <Button>
+                </Button>
+                <Button>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>
