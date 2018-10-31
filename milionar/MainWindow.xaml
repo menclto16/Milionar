@@ -11,9 +11,11 @@
     TextElement.FontSize="13"
     TextOptions.TextFormattingMode="Ideal"
     TextOptions.TextRenderingMode="Auto"
-    Background="{DynamicResource MaterialDesignPaper}"
+    Background="MidnightBlue"
     FontFamily="{DynamicResource MaterialDesignFont}"
-    Title="MainWindow" Height="450" Width="800">
+    SizeToContent="WidthAndHeight"
+    MinWidth="800" MinHeight="400"
+    Title="MainWindow" Height="400" Width="800">
     <Grid>
         <materialDesign:Card Padding="32" Margin="16">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center">Vítej ve hře milionář!</TextBlock>

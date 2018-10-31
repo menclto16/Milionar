@@ -28,7 +28,7 @@ namespace milionar
 
             frame = MyFrame;
 
-            frame.Navigate(new Page1(MyFrame));
+            frame.Navigate(new Page2(MyFrame));
             // DispatcherTimer
         }
     }

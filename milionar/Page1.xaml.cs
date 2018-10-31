@@ -25,7 +25,6 @@ namespace milionar
         public Page1()
         {
             InitializeComponent();
-           
         }
 
         public Page1(Frame frame) : this()
