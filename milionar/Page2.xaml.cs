@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace milionar
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
     public partial class Page2 : Page
     {
@@ -26,6 +26,7 @@ namespace milionar
         {
             InitializeComponent();
         }
+
         public Page2(Frame frame) : this()
         {
             this.frame = frame;

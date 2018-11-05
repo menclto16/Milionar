@@ -5,26 +5,49 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:milionar"
     mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="800"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     TextElement.FontWeight="Regular"
     TextElement.FontSize="13"
     TextOptions.TextFormattingMode="Ideal"
     TextOptions.TextRenderingMode="Auto"
-    Background="SteelBlue"
+    Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{DynamicResource MaterialDesignFont}"
     Title="Page2">
     <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="10"/>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="Background" Value="MidnightBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Grid>
+                            <Path Fill="{TemplateBinding Background}" Data="M0 16 L16 32 L300 32 L316 16 L300 0 L16 0 Z" Stroke="SteelBlue" StrokeThickness="3px"/>
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="MediumVioletRed"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Background" Value="MidnightBlue"/>
+
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
-                            <Path Fill="{TemplateBinding Background}" Data="M0 16 L16 32 L300 32 L316 16 L300 0 L16 0 Z" />
+                            <Path Fill="{TemplateBinding Background}" Data="M0 16 L16 32 L300 32 L316 16 L300 0 L16 0 Z" Stroke="SteelBlue" StrokeThickness="3px"/>
                             <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
                         </Grid>
                     </ControlTemplate>
@@ -32,15 +55,33 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <Border BorderThickness="30" >
-        <Grid>
-            <Grid.ColumnDefinitions>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-                <Button></Button>
-                <Button></Button>
-                <Button></Button>
-            </StackPanel>
-        </Grid>
-    </Border>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="bcg.jpg" TileMode="FlipX" Viewport="0,0,100,100" ViewportUnits="Absolute"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Source="logo.png" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Height="200" Width="200"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Label Content="Otázka"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left">
+            <Button></Button>
+            <Button></Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right">
+            <Button></Button>
+            <Button></Button>
+        </StackPanel>
+    </Grid>
 </Page>

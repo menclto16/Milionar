@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -25,11 +26,17 @@ namespace milionar
         public MainWindow()
         {
             InitializeComponent();
+            NavigateToPage1();
+        }
 
-            frame = MyFrame;
+        public void NavigateToPage1()
+        {
+            mainFrame.Navigate(new Page1(mainFrame));
+        }
 
-            frame.Navigate(new Page2(MyFrame));
-            // DispatcherTimer
+        public void NavigateToPage2()
+        {
+            mainFrame.Navigate(new Page2(mainFrame));
         }
     }
 }

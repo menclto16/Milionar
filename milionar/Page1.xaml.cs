@@ -25,6 +25,8 @@ namespace milionar
         public Page1()
         {
             InitializeComponent();
+
+            this.frame.Navigate(new Page2(frame));
         }
 
         public Page1(Frame frame) : this()
