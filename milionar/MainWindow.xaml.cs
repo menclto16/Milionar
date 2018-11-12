@@ -21,22 +21,10 @@ namespace milionar
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Frame frame;
-
         public MainWindow()
         {
             InitializeComponent();
-            NavigateToPage1();
-        }
-
-        public void NavigateToPage1()
-        {
-            mainFrame.Navigate(new Page1(mainFrame));
-        }
-
-        public void NavigateToPage2()
-        {
-            mainFrame.Navigate(new Page2(mainFrame));
+            mainFrame.Navigate(new Page1());
         }
     }
 }

@@ -17,5 +17,5 @@
     MinWidth="800" MinHeight="400"
     ResizeMode="CanMinimize"
     Title="MainWindow" Height="400" Width="800">
-    <Frame x:Name="mainFrame" />
+    <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
 </Window>

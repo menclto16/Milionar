@@ -18,20 +18,37 @@ namespace milionar
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page1
     {
-        private Frame frame;
-
         public Page1()
         {
             InitializeComponent();
 
-            this.frame.Navigate(new Page2(frame));
         }
 
-        public Page1(Frame frame) : this()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.frame = frame;
+            if (!new Game().CheckQuestions())
+            {
+                errorMess.Content = "Nedostatek otázek!";
+            }
+            else
+            {
+                var mainWindow = GetParentWindow(this);
+                if (mainWindow != null) mainWindow.mainFrame.Navigate(new Page2());
+            }
+
+        }
+
+        private static MainWindow GetParentWindow(DependencyObject obj)
+        {
+            while (obj != null)
+            {
+                var mainWindow = obj as MainWindow;
+                if (mainWindow != null) return mainWindow;
+                obj = VisualTreeHelper.GetParent(obj);
+            }
+            return null;
         }
     }
 }

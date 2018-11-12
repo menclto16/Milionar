@@ -8,7 +8,6 @@ namespace milionar
 {
     class Stage
     {
-        public Question Questions = new Question();
-
+        public Question QuestionObj = new Question();
     }
 }
