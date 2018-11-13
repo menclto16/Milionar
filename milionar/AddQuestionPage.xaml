@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:milionar"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Width="700"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
@@ -88,7 +89,7 @@
             Grid.Row="5"
             TextWrapping="Wrap"
             VerticalScrollBarVisibility="Auto"
-            materialDesign:HintAssist.Hint="Obtížnost otázky 1-15"
+            materialDesign:HintAssist.Hint="Obtížnost otázky 1-12"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch">
         </TextBox>

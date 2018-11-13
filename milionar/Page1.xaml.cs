@@ -26,11 +26,12 @@ namespace milionar
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void newGame(object sender, RoutedEventArgs e)
         {
             if (!new Game().CheckQuestions())
             {
                 errorMess.Content = "Nedostatek otázek!";
+                System.Windows.Application.Current.Shutdown();
             }
             else
             {
@@ -38,6 +39,17 @@ namespace milionar
                 if (mainWindow != null) mainWindow.mainFrame.Navigate(new Page2());
             }
 
+        }
+
+        private void addQuestions(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = GetParentWindow(this);
+            if (mainWindow != null) mainWindow.mainFrame.Navigate(new AddQuestionPage());
+        }
+
+        private void quitGame(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private static MainWindow GetParentWindow(DependencyObject obj)

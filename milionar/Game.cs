@@ -10,6 +10,7 @@ namespace milionar
 {
     class Game
     {
+        public bool gameFinished = false;
         public int Round = 1;
         public string CurrentQuestion
         {
@@ -20,6 +21,8 @@ namespace milionar
         }
 
         public List<Question> Questions = new List<Question>();
+
+        public int PickedAnswer;
 
         JsonSerializerSettings settings = new JsonSerializerSettings
         {
@@ -54,6 +57,21 @@ namespace milionar
 
                 Questions.Add(sortedQuestions[i][rndNum]);
             }
+        }
+
+        public bool CheckAnswer(string answer)
+        {
+            if (answer == Questions[Round-1].Answers[0].Content)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void RoundAdvance()
+        {
+            Round++;
+            PickedAnswer = 0;
         }
 
         public bool CheckQuestions()

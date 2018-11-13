@@ -73,7 +73,7 @@ namespace milionar
             try
             {
                 int input = Int32.Parse(difficulty.Text);
-                if (input < 1 | input > 15) return false;
+                if (input < 1 | input > 12) return false;
             }
             catch (Exception)
             {
